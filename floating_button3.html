@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+    <head>
+        <title>Floating Button 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+        <style type="text/css">
+        i {
+            color: #fff;
+            font-size: 20px !important;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        #btn {
+			display:none;
+		}
+
+        .button-parent{
+		display:flex;
+		}
+
+        .button {
+		width:50px;
+		height:50px;
+		display:block;
+		margin:5px;
+		background-color: #3498db;
+		border-radius:50%;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		color:white;
+		}
+
+        .float{
+		position:fixed;
+		width:50px;
+		height:50px;
+		bottom:40px;
+		right:40px;
+        margin:5px;
+		background-color: #2c3e50;
+		color:#FFF;
+		border-radius:50%;
+		text-align:center;
+        align-items:center;
+		box-shadow: 2px 2px 3px #999;
+		z-index:1000;
+		animation: bot-to-top 2s ease-out;
+        display:block;
+        display:flex;
+        justify-content:center;
+	    }
+
+    
+            /* link and link-parent */
+        .link-parent {
+        display:none;
+		position:fixed;
+        width:50px;
+		/* height:50px; */
+		bottom:40px;
+		right:35px;
+        margin:5px;
+        padding-bottom:20px;
+        bottom:80px;
+		z-index:100;
+		/* background-color:#F33; */
+
+
+        justify-content:center;
+        align-items:center;
+        transition:all .3s;
+        }
+
+        .link-item {
+        background-color:#2c3e50;
+        display:block;
+        width: 40px;
+        height:40px;
+        border-radius: 50%;
+        margin-bottom:5px;
+        transform:translateY(5px);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        }
+
+
+        /* control click */
+        #btn:checked ~.link-parent {
+        display:block;
+        }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class='button-parent'>
+            <input type="checkbox" id='btn' />
+            <label for="btn" class='float'>
+              <i class="material-icons">navigation</i>
+            </label>
+            
+            <div class="link-parent">
+                <a href='#' class='link-item' id='link-one'>
+                  <i class="material-icons">location_on</i>
+                </a>
+                <a href='#' class='link-item' id='link-two'>
+                  <i class="iconify" data-icon="mdi:waze" style="color: #FFF;"></i>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
